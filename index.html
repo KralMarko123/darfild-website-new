@@ -25,7 +25,6 @@
       * {
         box-sizing: border-box;
       }
-
       html {
         scroll-behavior: smooth;
       }
@@ -48,7 +47,6 @@
         max-width: 100%;
         display: block;
       }
-
       a {
         color: inherit;
         text-decoration: none;
@@ -180,8 +178,8 @@
         align-items: center;
         gap: 0;
         padding: 0.25rem;
-        background: rgba(20, 20, 20, 0.88);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(20, 20, 20, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 999px;
         box-shadow: var(--shadow);
         position: fixed;
@@ -302,7 +300,6 @@
         background: var(--accent);
         color: white;
       }
-
       .btn-secondary {
         background: transparent;
         color: var(--text);
@@ -327,7 +324,6 @@
         height: 100%;
         object-fit: cover;
       }
-
       .visual-panel.main {
         min-height: 430px;
       }
@@ -399,28 +395,6 @@
       .owner-card,
       .contact-card {
         padding: 2rem;
-      }
-
-      .quote-card {
-        position: relative;
-        background: linear-gradient(
-          180deg,
-          rgba(179, 24, 40, 0.1),
-          rgba(255, 255, 255, 0.04)
-        );
-      }
-
-      .quote-mark {
-        margin: 0 0 1rem;
-        color: #ff8a97;
-        font-size: 4rem;
-        line-height: 0.8;
-      }
-
-      .quote-text {
-        margin: 0;
-        font-size: 1.2rem;
-        line-height: 1.5;
       }
 
       .services-grid,
@@ -495,15 +469,17 @@
 
       .owner-grid {
         align-items: center;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 1.1rem;
       }
 
       .owner-photo-wrap {
         overflow: hidden;
-        border-radius: 30px;
+        border-radius: 24px;
         border: 1px solid rgba(255, 255, 255, 0.08);
         box-shadow: var(--shadow);
         background: linear-gradient(180deg, #374862, #222831);
-        min-height: 480px;
+        min-height: 340px;
       }
 
       .owner-photo {
@@ -513,18 +489,28 @@
         object-position: center top;
       }
 
+      .owner-card {
+        padding: 1.5rem;
+      }
+      .owner-card .section-title {
+        font-size: clamp(1.6rem, 3vw, 2.35rem);
+        margin-bottom: 0.8rem;
+      }
+      .owner-card p {
+        font-size: 0.98rem;
+      }
+
       .owner-meta {
-        margin-top: 1rem;
-        padding-top: 1rem;
+        margin-top: 0.85rem;
+        padding-top: 0.85rem;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
         color: var(--muted);
-        font-size: 0.95rem;
+        font-size: 0.92rem;
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
       }
-
       .contact-card {
         padding: 2rem;
       }
@@ -658,7 +644,6 @@
       @media (max-width: 1100px) {
         .hero-grid,
         .about-grid,
-        .owner-grid,
         .contact-grid,
         .services-grid,
         .reasons-grid,
@@ -668,21 +653,21 @@
 
         .hero-grid,
         .about-grid,
-        .owner-grid,
         .contact-grid {
           grid-template-columns: 1fr;
         }
 
+        .owner-grid {
+          grid-template-columns: 0.8fr 1.2fr;
+        }
         .hero {
           padding-top: 3rem;
         }
-
         .visual-panel.main {
           min-height: 320px;
         }
-
         .owner-photo-wrap {
-          min-height: 380px;
+          min-height: 300px;
         }
       }
 
@@ -749,10 +734,24 @@
           grid-template-columns: 1fr;
         }
 
+        .owner-grid {
+          grid-template-columns: 0.9fr 1.1fr;
+          gap: 0.9rem;
+        }
+
+        .owner-card {
+          padding: 1.15rem;
+        }
+        .owner-card .section-title {
+          font-size: clamp(1.25rem, 4vw, 1.8rem);
+        }
+        .owner-photo-wrap {
+          min-height: 260px;
+        }
+
         .section {
           padding: 4rem 0;
         }
-
         .hero-title {
           max-width: 100%;
         }
@@ -762,23 +761,19 @@
         .brand {
           align-items: flex-start;
         }
-
         .brand-mark {
           width: 56px;
           height: 56px;
         }
-
         .brand-name {
           font-size: 1.2rem;
         }
-
         .brand-tagline {
           font-size: 0.82rem;
         }
 
         .hero-card,
         .quote-card,
-        .owner-card,
         .contact-card {
           padding: 1.4rem;
         }
@@ -1400,6 +1395,7 @@
         </div>
       </div>
     </footer>
+
     <script>
       const html = document.documentElement;
       const buttons = document.querySelectorAll("[data-lang-target]");
