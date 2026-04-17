@@ -14,6 +14,10 @@
     grid-template-columns: 1fr;
   }
 
+  .about-visual {
+    min-height: 300px;
+  }
+
   .hero {
     padding-top: 2.5rem;
   }
@@ -88,6 +92,10 @@
 
   .contact-compact {
     grid-template-columns: 1fr;
+  }
+
+  .service-image {
+    height: 115px;
   }
 
   .owner-feature {
